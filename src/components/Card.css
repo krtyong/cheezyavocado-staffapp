@@ -1,0 +1,194 @@
+
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    padding: 25px 15px;
+    background-color: #FFFFFF;
+    margin: 50px 0;
+    height: 250px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    display: flex;
+  }
+  
+  .top {
+    border-radius: 25px 25px 0 0;
+    height: 60px;
+    width: 100%;
+    background-color: #556B2F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+  }
+  
+  .name {
+    font-size: 1.25em;
+    color: #2d3436;
+    padding: 25px 15px;
+    color: #FFDB58;
+  }
+
+  .roomnumber {
+    font-size: 1.25em;
+    color: #2d3436;
+    padding: 25px 0px;
+    color: #FFDB58;
+  }
+
+  .callavocabot {
+    font-size: 1.00em;
+    /* padding: 25px 0px; */
+    border-radius: 0 25px 0 0;
+    /* margin-top: 5px; */
+    margin-right: 0px;
+    padding: 10px;
+    background-color: #C1B841;
+    text-align: center;
+    color: #556B2F;
+    width: 80px;
+    height: 60px;
+    border: none;
+    top: 0;
+    right: 0;
+  }
+  
+  /* .card img {
+    margin: 30px 20px 0 0;
+  }
+  
+  .circle-img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 120px;
+    height: 120px;
+  } */
+
+  .bottom {
+    margin-top: 50px;
+    display: block;
+    height: 100px;
+    width: 250px;
+  }
+  
+  p {
+      color: #556B2F;
+      display: block;
+  }
+
+  .customername {
+    padding-top: 10px;
+    color:  #807667;  
+  }
+
+  .order {
+      color: red;
+      margin: 20px 0px;
+  }
+  
+  .time {
+    margin: 0px 0px;
+    color: #807667;
+  }
+
+  .cost {
+    margin: 0px 0px;
+    color: #807667;
+  }
+
+  .button {
+    /* border-radius: 0px 0px 25px 25px; */
+    /* height: 60px; */
+    /* width: 100%; */
+    /* background-color: #556B2F; */
+    margin-bottom: 10px;
+    margin-right: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: 150px;
+  }
+
+  .not-accept-button {
+    border-radius: 5px;  
+    background-color: #FFDB58; 
+    border: none;
+    color: #556B2F;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer; 
+    font-size: 1em;  
+  }
+
+  .accept-button {
+    border-radius: 5px;  
+    background-color: #C1B841; 
+    border: none;
+    color: #556B2F;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    margin: 4px 2px; 
+    font-size: 1em;  
+  }
+
+  .not-accept-button:hover {
+      background-color: #C1B841;
+  }
+
+  .contact {
+    border-radius: 5px;
+    background-color: #FFDB58; 
+    border: none;
+    color: #807667;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+
+  .contact:hover {
+      background-color: #C1B841;
+  }
+
+  .call-avocabot {
+      margin-top: 70px;
+      margin-left: 100px;
+      width: 80px;
+      height: 80px;
+      background-color: #C1B841;
+      color: #556B2F;
+      border-radius: 100%;
+      border: none;
+      font-size: 1em;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .call-avocabot:hover {
+      background-color: #C1B841;
+  }
+
+  .not-call-avocabot {
+    margin-top: 70px;
+    margin-left: 100px;
+    width: 80px;
+    height: 80px;
+    background-color: #FFDB58;
+    color: #556B2F;
+    border-radius: 100%;
+    border: none;
+    font-size: 1em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}

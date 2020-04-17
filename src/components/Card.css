@@ -254,3 +254,9 @@
     height: 100px;
     width: 100px;
   }
+
+  .arrived {
+    margin-top: 150px;
+    margin-left: 150px;
+    color: #556B2F;
+  }

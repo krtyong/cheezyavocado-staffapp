@@ -4,6 +4,7 @@ import "./Card.css";
 import api_axios from "../api.js";
 import delivering from "../delivering.gif";
 import loader from "../loader.gif";
+import loaderblue from "../loader-blue.gif";
 
 const mqtt = require("mqtt");
 
@@ -24,6 +25,7 @@ var options = {
 const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
 client.subscribe("lockerIsOpen");
 client.subscribe("lockerIsClosed");
+client.subscribe("orderStatus")
 
 function Card(props) {
   //const [cardStatus, setCardStatus] = useState("call");
@@ -32,59 +34,75 @@ function Card(props) {
   const [cardStatus, setCardStatus] = useState("pending");
   const [isLoading, setIsLoading] = useState(false);
   const [listenMQTT, setListenMQTT] = useState(false)
-  
+  const [listenMQTTGuest, setListenMQTTGuest] = useState(false);
+
+  const Loading = () => {
+    return <>{isLoading ? <img className='loader' src={loaderblue}/> : <></>}</>;
+  };
+
+//props.statusApi
+   function handleAccept() {
+    setIsLoading(true)
+    // if (cardStatus === 'approved') {
+    //   setIsLoading(false);
+    //   setCardStatus("approved");
+    // }
+    api_axios
+      .get(`/staff/acceptOrder?orderID=${props.orderID}`)
+      .then((response) => {
+        setIsLoading(false)
+        if (response.data === "order approved") {
+          setCardStatus("approved");
+          //props.fetchData()
+        }else{
+          throw new Error(response.data)
+        }
+      });
+
+  }
+
+    function handleCall() {
+
+    setIsLoading(true);
+    api_axios.get(`/staff/foodFinished?orderID=${props.orderID}`) //call avocabot
+    .then(response => {
+      setIsLoading(false)
+      if (response.data === 'OK') {
+        setCardStatus("on the way to department");
+        setListenMQTT(true);
+      }else{
+        throw new Error("server crash")
+      }
+    })
+  }
 
   useEffect(()=>{
     client.on('message', (topic, message) => {
       if (topic === 'lockerIsOpen' && listenMQTT===true) {
               console.log(topic)
               setIsLoading(false)
-              setCardStatus("send");
+              setCardStatus("arrived at department");
       }
       if (topic === 'lockerIsClosed' && listenMQTT===true) {
         console.log(topic)
         setIsLoading(false)
-        setCardStatus("delivering");
+        setCardStatus("on the way");
+        setListenMQTTGuest(true)
+      }
+      if (topic === 'orderStatus' && listenMQTTGuest===true) {
+        let obj ={}
+        if(message){
+          obj = JSON.parse(message.toString())
+        }
+        console.log(obj)
+        if(obj.status=="arrived"){
+          setCardStatus("arrived")
+        }
+
       }
     })
     
-  },[listenMQTT])
-
-
-
-  const Loading = () => {
-    return <>{isLoading ? <img className='loader' src={loader}/> : <></>}</>;
-  };
-
-   function handleAccept(event) {
-    setIsLoading(true)
-    api_axios
-      .get(`/staff/acceptOrder?orderID=${props.orderID}`)
-      .then((response) => {
-        setIsLoading(false)
-        if (response.data === "order approved") {
-          setCardStatus("call");
-          //props.fetchData()
-        }else{
-          throw new Error("server crash")
-        }
-      });
-
-  }
-
-  function handleCall() {
-
-    setIsLoading(true)
-    api_axios.get(`/staff/foodFinished?orderID=${props.orderID}`) //call avocabot
-    .then(response => {
-      setIsLoading(false)
-      if (response.data === 'OK') {
-    setCardStatus("open");
-      }else{
-        throw new Error("server crash")
-      }
-    })
-  }
+  },[listenMQTT,listenMQTTGuest])
 
   function handleOpen(event) {
     setIsLoading(true)
@@ -96,8 +114,6 @@ function Card(props) {
       setIsLoading(true)
       }
     })
-    //   }
-    // })
   }
 
   function handleSend(event) {
@@ -122,30 +138,40 @@ function Card(props) {
             Accept Order
           </button>
         );
-      case "call":
+      case "approved":
         return (
           <button className="call" onClick={handleCall}>
             Call Avocabot
           </button>
         );
-      case "open":
+      case "on the way to department":
+        return ( 
+          <img className='loader' src={loader}/>   
+        );
+      case "arrived at department":
         return (
           <button className="open" onClick={handleOpen}>
             Open Avocabot
           </button>
         );
-      case "send":
+        case "on the way":
+          return (
+            <img className='delivering' src={delivering} />
+          );
+      case "arrived":
         return (
-          <button className="send" onClick={handleSend}>
-            Send Avocabot
-          </button>
+          <p className='arrived'>Arrived!</p>
         );
-      case "delivering":
-        return <img className="delivering" src={delivering} />;
-      case "success":
-        return <p>Delivered!</p>;
-      default:
-        return <p>error</p>;
+      case "complete":
+        return (
+          <div></div>
+        );
+      // case "delivering":
+      //   return <img className="delivering" src={delivering} />;
+      // case "success":
+      //   return <p>Delivered!</p>;
+      // default:
+      //   return <p>error</p>;
     }
   };
 

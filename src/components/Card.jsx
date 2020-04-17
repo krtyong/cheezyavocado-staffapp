@@ -28,7 +28,7 @@ client.subscribe("lockerIsClosed");
 client.subscribe("orderStatus")
 
 function Card(props) {
-  //const [cardStatus, setCardStatus] = useState("call");
+
 
   // testing
   const [cardStatus, setCardStatus] = useState("pending");
@@ -52,7 +52,8 @@ function Card(props) {
       .then((response) => {
         setIsLoading(false)
         if (response.data === "order approved") {
-          setCardStatus("approved");
+          props.fetchData()
+          //setCardStatus("approved");
           //props.fetchData()
         }else{
           throw new Error(response.data)
@@ -68,7 +69,8 @@ function Card(props) {
     .then(response => {
       setIsLoading(false)
       if (response.data === 'OK') {
-        setCardStatus("on the way to department");
+        props.fetchData()
+        //setCardStatus("on the way to department");
         setListenMQTT(true);
       }else{
         throw new Error("server crash")
@@ -81,12 +83,15 @@ function Card(props) {
       if (topic === 'lockerIsOpen' && listenMQTT===true) {
               console.log(topic)
               setIsLoading(false)
-              setCardStatus("arrived at department");
+              props.fetchData()
+              //setCardStatus("arrived at department");
       }
       if (topic === 'lockerIsClosed' && listenMQTT===true) {
         console.log(topic)
         setIsLoading(false)
-        setCardStatus("on the way");
+        // get
+        props.fetchData()
+        //setCardStatus("on the way");
         setListenMQTTGuest(true)
       }
       if (topic === 'orderStatus' && listenMQTTGuest===true) {
@@ -96,7 +101,10 @@ function Card(props) {
         }
         console.log(obj)
         if(obj.status=="arrived"){
-          setCardStatus("arrived")
+          props.fetchData()
+          //setCardStatus("arrived")
+          setListenMQTTGuest(false)
+
         }
 
       }
@@ -131,7 +139,7 @@ function Card(props) {
   // status = pending, approved, on the way
 
   const renderButton = (cardStatus, statusApi) => {
-    switch (cardStatus) {
+    switch (statusApi) {
       case "pending":
         return (
           <button className="accept" onClick={handleAccept}>

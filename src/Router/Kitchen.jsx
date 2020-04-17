@@ -57,10 +57,13 @@ function createCard(foodItem, fetchData) {
 function Kitchen() {
   const [foodLists, setFoodLists] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   const fetchData = () => {
+    setIsLoading(true)
     api_axios.get("/staff/getFoodOrders").then((response) => {
       setFoodLists(response.data);
+      setIsLoading(false)
     });
   };
 
@@ -87,6 +90,7 @@ function Kitchen() {
         <h2 className="orderlists">Order Lists</h2>
       </div>
       {/* {foodLists.map(createCard)} */}
+      {isLoading?<p>fetching data...</p>:<p></p> }
       <CreateCardList foodLists={foodLists} fetchData={fetchData} />
     </div>
   );

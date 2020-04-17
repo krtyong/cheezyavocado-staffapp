@@ -53,7 +53,7 @@ function Card(props) {
         setIsLoading(false)
         if (response.data === "order approved") {
           setCardStatus("approved");
-          //props.fetchData()
+          //props.fetchData() todeploy
         }else{
           throw new Error(response.data)
         }

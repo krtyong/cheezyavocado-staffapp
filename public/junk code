@@ -1,0 +1,71 @@
+// const [isAcceptClicked, setIsAcceptClicked] = useState(false);
+  // const [isOpened, setIsOpened] = useState(false);
+  // const [isDelivering, setIsDelivering] = useState(false);
+  // const [isDelivered, setIsDelivered] = useState(false);
+
+  // function handleAccept(event) {
+  //   setIsAcceptClicked(true);
+  //   //HTTP GET /staff/acceptOrder >> orderID
+
+  //   // api_axios.post('/staff/acceptOrder', props.orderID)
+  //   //     .then(response => {
+  //   //       if (response.data === 'order approved') {
+  //   //         setIsAcceptClicked(true);
+  //   //       } else {
+  //   //         setIsAcceptClicked(false);
+  //   //       }
+  //   //     })
+  // }
+
+  // useEffect(() => {
+  //   setCardStatus("open");
+
+  // api_axios.post('/staff/foodFinished', props.orderID) //call avocabot
+  // .then(response => {
+  //   if (response.data === 'OK') {
+  //     setCardStatus("open");
+  //   } else {
+  //     // setCardStatus("accept");
+  //   }
+  // })
+  // },[isAcceptClicked])
+
+  // function handleOpen(event) {
+  //   setIsOpened(true); //open locker
+
+  //   // api_axios.post('/staff/openLocker')
+  //   // .then(response => {
+  //   //   if (response.data === 'OK') {
+  //   //     setIsOpened(true); //open locker
+  //   //   } else {
+
+  //   //   }
+  //   // })
+  // }
+
+  // useEffect(() => {
+  //   // client.subscribe("lockerIsOpen"); //Avocabot's LED is on
+  //   setCardStatus("send");
+  // },[isOpened])
+
+  // function handleSend(event) { //staff put the order in the avocabot, close locker and click send
+  //   setIsDelivering(true);
+
+  //   // api_axios.post('/staff/sendAvocabot')
+  //   // .then(response => {
+  //   //   if (response.data === 'OK') {
+  //   //     setIsDelivering(true);
+  //   //     setCardStatus("delivering");
+  //   //   }
+  //   // })
+  // }
+
+  // useEffect(() => {
+  //   setCardStatus("delivering");
+  //   // client.subscribe("lockerIsClosed");
+  //   //แล้วก็ลบ card
+  // },[isDelivering])
+
+  // // function deleteCard() {
+  // //   setIsDelivered(true);
+  // // }

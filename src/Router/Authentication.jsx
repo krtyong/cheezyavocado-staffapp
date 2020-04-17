@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 // import axios from 'axios'
 import cheezyavocado from "../unnamed.png";
 // import axios from "axios";
-import api_axios from "../api.js"
+import api_axios from "../api.js";
 
 
 function Authentication(props) {
 
     const [values, setValues] = useState({department: "", password: ""});
-    const [error, setError] = useState({department: "", password: ""});
+    // const [error, setError] = useState({department: "", password: ""});
     
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isCorrected, setIsCorrected] = useState(false);
@@ -48,7 +48,7 @@ function Authentication(props) {
             console.log(response);
             console.log(response.data);
 
-            if(response.data === "incorect data"){
+            if(response.data === "Incorrect data"){
                 setIsCorrected(false);
             } else if (response.data.accessToken && values.department === 'Kitchen'){
                 setIsCorrected(true);
@@ -83,8 +83,8 @@ function Authentication(props) {
                             value={values.department}
                         >
                             <option selected value="">Choose your Department</option>
-                            <option value="Kitchen">Kitchen</option>
-                            <option value="HouseKeeping">House Keeping</option>
+                            <option value="Kitchen">KITCHEN</option>
+                            <option value="HouseKeeping">HOUSE KEEPING</option>
                         </select>
                     </div> 
                     {/* <div>{isSelected ? <p>Please select your department.</p> : null}</div> */}
@@ -96,9 +96,10 @@ function Authentication(props) {
                     value={values.password}
                     placeholder="Department's Password"        
                 />
-                <div>{isCorrected ? null : <p>Please select your department or enter the correct password.</p>}</div>
-                <button className='enterbutton' type="submit">Enter</button>
-   
+                <div>{isCorrected ? null : <p className="error">Please select your department or enter the correct password.</p>}</div>
+                <div className='buttonmargin'>
+                    <button className='enterbutton' type="submit">Enter</button>
+                </div>
             </form>
         </div>
     )

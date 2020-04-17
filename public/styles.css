@@ -8,19 +8,20 @@
   body {
     font-family: sans-serif;
     margin: 0 auto;
-    max-width: 500px;
+    /* max-width: 500px; */
     min-width: 500px;
     background-color: #FFF2CB;
   }
   
   .container {
-    margin: 10% auto;
-    padding: 80px 0;
+    margin-top: 17%;
+    /* margin: 10% auto; */
+    /* padding: 80px 0; */
     /* text-align: center; */
   }
   
   .container h1 {
-    font-size: 40px;
+    font-size: 4em;
     font-weight: 200;
     color: #556B2F;
     text-align: center;
@@ -31,23 +32,28 @@
     color: #556B2F;
   }
 
-  .container #department {
+  .container {
     border: 1px solid rgba(252, 252, 252, 0.4);
   }
   
   input {
     border: 1px solid rgba(252, 252, 252, 0.4);
     background-color: rgba(255, 219, 88, 0.2);
-    width: 250px;
+    height: 60px;
+    width: 475px;
     border-radius: 3px;
     font-family: "Source Sans Pro", sans-serif;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.5em;
     color: #556B2F;
     font-weight: 300;
+  }
+
+  .buttonmargin {
+    margin-top: 50px;
   }
   
   .enterbutton {
@@ -57,10 +63,10 @@
     border: 0;
     padding: 10px 15px;
     color: #FFDB58;
-    border-radius: 3px;
+    border-radius: 20px;
     width: 250px;
-    font-size: 18px;
-    margin-top: 20px;
+    height: 60px;
+    font-size: 1.5em;
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -68,26 +74,30 @@
   }
   
   .heading {
-    text-align: center;
-    font-size: 2em;
+    text-align: left;
+    font-size: 3em;
     color: #556B2F;
-    margin: 20px 0 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 50px;
   }
 
   .orderlists {
-    text-align: center;
-    font-size: 1.5em;
+    text-align: left;
+    font-size: 1.75em;
     color: #807667;
-    margin: 20px 0 10px;
+    margin-top: 20px;
+    margin-left: 50px;
   }
 
   label {
     display: block;
     margin-top: 30px;
     margin-bottom: 5px;
-    margin-left: 125px;
+    margin-left: 250px;
     color: #807667;
-    width: 250px;
+    width: 400px;
+    font-size: 1.5em;
   }
 
   .custom-select {
@@ -98,23 +108,34 @@
   }
 
   .custom-select select {
-    height: 40px;
-    width: 250px;
+    height: 60px;
+    width: 475px;
+    padding-left: 10px;
     background-color: #C1B841;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #556B2F;
     font-weight: 300;
     border: none;
   }
 
   img {
+
     position: relative;
-    width: 200px;
-    height: 200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+  }
+
+  .error {
+    position: relative;
+    display: block;
+    color: red;
+    font-size: 1.25em;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 5px;
   }
 
 

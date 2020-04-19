@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import api_axios from "../api.js";
+import loader from "../loadingbig.gif";
 
 const mqtt = require("mqtt");
 
@@ -90,7 +91,7 @@ function Kitchen() {
         <h2 className="orderlists">Order Lists</h2>
       </div>
       {/* {foodLists.map(createCard)} */}
-      {isLoading?<p>fetching data...</p>:<p></p> }
+      {isLoading? <img className='fetching' src={loader} />:<p></p> }
       <CreateCardList foodLists={foodLists} fetchData={fetchData} />
     </div>
   );

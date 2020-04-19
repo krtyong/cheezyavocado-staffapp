@@ -215,7 +215,7 @@ function Card(props) {
   return (
     <div className="card">
       <div className="top">
-        <h2 className="order-id">Order #{props.orderID}</h2>
+        <h2 className="order-id"><span className='orderid'>Order #</span>{props.orderID}</h2>
         <h2 className="roomnumber">Room Number: {props.roomNumber}</h2>
         {/* <button className='callavocabot'>Call Avocabot</button>        */}
       </div>

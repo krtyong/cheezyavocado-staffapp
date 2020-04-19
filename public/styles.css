@@ -25,11 +25,7 @@
     font-weight: 200;
     color: #556B2F;
     text-align: center;
-  }
-
-  .container h3 {
-    font-weight: 200;
-    color: #556B2F;
+    font-family: Alfa Slab One, sans-serif;
   }
 
   .container {
@@ -37,19 +33,19 @@
   }
   
   input {
-    border: 1px solid rgba(252, 252, 252, 0.4);
+    border: 1px solid rgba(193,184,65, 1);
     background-color: rgba(255, 219, 88, 0.2);
     height: 60px;
     width: 475px;
     border-radius: 3px;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: sans-serif;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
     text-align: center;
     font-size: 1.5em;
     color: #556B2F;
-    font-weight: 300;
+    font-weight: lighter;
   }
 
   .buttonmargin {
@@ -57,29 +53,30 @@
   }
   
   .enterbutton {
-    appearance: none;
-    outline: 0;
     background-color: #556B2F;
     border: 0;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     color: #FFDB58;
     border-radius: 20px;
     width: 250px;
     height: 60px;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: center;
     display: block;
     margin: 0 auto;
-    
+    cursor: pointer;
+    font-family: Alfa Slab One, sans-serif;
+    font-weight: 100;
   }
   
   .heading {
     text-align: left;
     font-size: 3em;
     color: #556B2F;
-    font-weight: bold;
     margin-top: 50px;
     margin-left: 50px;
+    font-family: Permanent Marker, sans-serif;
+    font-weight: lighter;
   }
 
   .orderlists {
@@ -88,6 +85,7 @@
     color: #807667;
     margin-top: 20px;
     margin-left: 50px;
+    font-family: sans-serif;
   }
 
   label {
@@ -98,13 +96,13 @@
     color: #807667;
     width: 400px;
     font-size: 1.5em;
+    font-family: sans-serif;
   }
 
   .custom-select {
     position: relative;
     font-family: "Source Sans Pro", sans-serif;
     text-align: center;
-  
   }
 
   .custom-select select {
@@ -114,8 +112,9 @@
     background-color: #C1B841;
     font-size: 1.5em;
     color: #556B2F;
-    font-weight: 300;
+    font-weight: lighter;
     border: none;
+    font-family: sans-serif;
   }
 
   img {
@@ -136,6 +135,10 @@
     text-align: center;
     margin-top: 50px;
     margin-bottom: 5px;
+  }
+
+  .fetching {
+    margin-top: 200px;
   }
 
 

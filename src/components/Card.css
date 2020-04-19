@@ -32,6 +32,16 @@
     padding-top: 30px;
     padding-left: 30px;
     color: #FFDB58;
+    font-family: sans-serif;
+  }
+
+  orderid {
+    font-size: 2em;
+    color: #2d3436;
+    padding-top: 30px;
+    padding-left: 30px;
+    color: #FFDB58;
+    font-family: Alfa Slab One, sans-serif;
   }
 
   .roomnumber {
@@ -89,11 +99,6 @@
     font-size: 1.5em;
   }
 
-  .cost {
-    margin: 0px 0px;
-    color: #807667;
-  }
-
   .button {
     margin-bottom: 10px;
     position: absolute;
@@ -104,82 +109,10 @@
     width: 150px;
   }
 
-  .not-accept-button {
-    border-radius: 5px;  
-    background-color: #FFDB58; 
-    border: none;
-    color: #556B2F;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: solid;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer; 
-    font-size: 1.25em; 
-  }
-
-  .accept-button {
-    border-radius: 5px;  
-    background-color: #C1B841; 
-    border: none;
-    color: #556B2F;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: solid;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer; 
-    font-size: 1.25em; 
-  }
-
-  .not-accept-button:hover {
-      background-color: #C1B841;
-  }
 
   .tag {
     color: #556B2F;
-  }
-
-
-  .call-avocabot {
-      margin-top: 70px;
-      margin-left: 100px;
-      width: 80px;
-      height: 80px;
-      background-color: #C1B841;
-      color: #556B2F;
-      border-radius: 100%;
-      border: none;
-      font-size: 1em;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .not-call-avocabot {
-    margin-top: 70px;
-    margin-left: 100px;
-    width: 80px;
-    height: 80px;
-    background-color: #FFDB58;
-    color: #556B2F;
-    border-radius: 100%;
-    border: none;
-    font-size: 1em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-}
-
-  .send-avocabot {
-    margin-top: 70px;
-    margin-left: 100px;
-    width: 80px;
-    height: 80px;
-    background-color: #FFDB58;
-    color: #556B2F;
-    border-radius: 100%;
-    border: none;
-    font-size: 1em;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
+    font-weight: bolder;
   }
 
   .delivering {
@@ -193,13 +126,15 @@
     margin-top: 200px;
     margin-left: 125px;
     font-size: 1.5em;
-    background-color: #556B2F;
+    background-color: #FFDB58;
     padding: 10px;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;  
     cursor: pointer; 
-    color: #C1B841;
+    color: #556B2F;
+    font-family: sans-serif;
+    font-weight: bold;
   }
 
   .accept:hover {
@@ -215,9 +150,10 @@
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.25em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    font-family: Permanent Marker, sans-serif;
   }
 
   .open {
@@ -229,9 +165,10 @@
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.25em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    font-family: Permanent Marker, sans-serif;
   }
 
   .send {
@@ -243,14 +180,15 @@
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.25em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    font-family: Permanent Marker, sans-serif;
   }
 
   .loader {
-    margin-top: 150px;
-    margin-left: 150px;
+    margin-top: 125px;
+    margin-left: 170px;
     height: 100px;
     width: 100px;
   }
@@ -259,4 +197,5 @@
     margin-top: 150px;
     margin-left: 150px;
     color: #556B2F;
+    font-family: Permanent Marker, sans-serif;
   }

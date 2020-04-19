@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import api_axios from "../api.js";
+import loader from "../loadingbig.gif";
 
 const mqtt = require("mqtt");
 
@@ -19,7 +20,7 @@ var options = {
 };
 
 const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
-client.subscribe("frontend/updateAmenityOrder");
+client.subscribe("frontend/updateKitchenOrder");
 
 const CreateCardList = (props) => {
   let cardList = props.amenityLists.map((amenityItem) => {
@@ -54,42 +55,45 @@ function createCard(amenityItem, fetchData) {
   );
 }
 
-function HouseKeeping() {
-    const [amenityLists, setAmenityLists] = useState([]);
-    const [orders, setOrders] = useState([]);
-  
-    const fetchData = () => {
-      api_axios.get("/staff/getAmenityOrders").then((response) => {
-        setAmenityLists(response.data);
-      });
-    };
-  
-    useEffect(() => {
-      fetchData();
-      client.on("message", (topic, message) => {
-        if (topic === "frontend/updateAmenityOrder") {
-          fetchData();
-          console.log(message.toString());
-        }
-      });
-  
-      // .catch
-    }, []);
-  
-    useEffect(() => {
-      setOrders(amenityLists.orders);
-    }, [amenityLists]);
-  
-    return (
-      <div>
-        <div className="topbar">
-          <h1 className="heading">House Keeping</h1>
-          <h2 className="orderlists">Order Lists</h2>
-        </div>
-        {/* {foodLists.map(createCard)} */}
-        <CreateCardList amenityLists={amenityLists} fetchData={fetchData} />
+function Kitchen() {
+  const [amenityLists, setAmenityLists] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+
+  const fetchData = () => {
+    setIsLoading(true)
+    api_axios.get("/staff/getAmenityOrders").then((response) => {
+      setAmenityLists(response.data);
+      setIsLoading(false)
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+    client.on("message", (topic, message) => {
+      if (topic === "frontend/updateAmenityOrder") {
+        fetchData();
+        console.log(message.toString());
+      }
+    });
+
+    // .catch
+  }, []);
+
+  useEffect(() => {
+    setOrders(amenityLists.orders);
+  }, [amenityLists]);
+
+  return (
+    <div>
+      <div className="topbar">
+        <h1 className="heading">House Keeping</h1>
+        <h2 className="orderlists">Order Lists</h2>
       </div>
-    );
+      {isLoading ? <img className='fetching' src={loader} />:<p></p> }
+      <CreateCardList amenityLists={amenityLists} fetchData={fetchData} />
+    </div>
+  );
 }
 
-export default HouseKeeping;
+export default Kitchen;

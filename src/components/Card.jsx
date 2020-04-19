@@ -35,6 +35,7 @@ function Card(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [listenMQTT, setListenMQTT] = useState(false)
   const [listenMQTTGuest, setListenMQTTGuest] = useState(false);
+  const [lockerIsOpenButton, setLockerIsOpenButton] =useState(true);
 
   const Loading = () => {
     return <>{isLoading ? <img className='loader' src={loaderblue}/> : <></>}</>;
@@ -120,6 +121,7 @@ function Card(props) {
       if (response.data === 'OK') {
         setListenMQTT(true); //Avocabot's LED is on
       setIsLoading(true)
+      setLockerIsOpenButton(false);
       }
     })
   }
@@ -132,6 +134,7 @@ function Card(props) {
       if (response.data === 'order on the way') {
          //Avocabot's LED is on
          setIsLoading(true)
+         setLockerIsOpenButton(true);
       }
     })
   }
@@ -147,21 +150,28 @@ function Card(props) {
           </button>
         );
       case "approved":
+
         return (
           <button className="call" onClick={handleCall}>
             Call Avocabot
           </button>
         );
+
       case "on the way to department":
         return ( 
           <img className='loader' src={loader}/>   
         );
       case "arrived at department":
+        if(lockerIsOpenButton ){
         return (
           <button className="open" onClick={handleOpen}>
             Open Avocabot
           </button>
         );
+        }else{
+          return (<button className="send" onClick={handleSend}>Send Avocabot</button>);
+
+        }
         case "on the way":
           return (
             <img className='delivering' src={delivering} />

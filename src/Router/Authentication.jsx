@@ -53,7 +53,7 @@ function Authentication(props) {
             } else if (response.data.accessToken && values.department === 'Kitchen'){
                 setIsCorrected(true);
                 props.history.push("/kitchen");
-            } else if (response.data.accessToken && values.department === 'HouseKeeping'){
+            } else if (response.data.accessToken && values.department === 'Housekeeping'){
                 setIsCorrected(true);
                 props.history.push("/housekeeping");
             }
@@ -84,7 +84,7 @@ function Authentication(props) {
                         >
                             <option selected value="">Choose your Department</option>
                             <option value="Kitchen">KITCHEN</option>
-                            <option value="HouseKeeping">HOUSE KEEPING</option>
+                            <option value="Housekeeping">HOUSE KEEPING</option>
                         </select>
                     </div> 
                     {/* <div>{isSelected ? <p>Please select your department.</p> : null}</div> */}

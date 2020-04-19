@@ -20,7 +20,7 @@ var options = {
 };
 
 const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
-client.subscribe("frontend/updateKitchenOrder");
+client.subscribe("frontend/updateAmenityOrder");
 
 const CreateCardList = (props) => {
   let cardList = props.amenityLists.map((amenityItem) => {
@@ -55,7 +55,7 @@ function createCard(amenityItem, fetchData) {
   );
 }
 
-function Kitchen() {
+function HouseKeeping() {
   const [amenityLists, setAmenityLists] = useState([]);
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
@@ -96,4 +96,4 @@ function Kitchen() {
   );
 }
 
-export default Kitchen;
+export default HouseKeeping;

@@ -55,10 +55,24 @@ function createCard(foodItem, fetchData) {
   );
 }
 
-function Kitchen() {
+function Kitchen(props) {
   const [foodLists, setFoodLists] = useState([]);
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(()=>{
+    if(!localStorage.token){
+      props.history.push('/')
+
+    }
+  },[])
+
+
+  
+  const logOut = () =>{
+    localStorage.clear(); 
+    props.history.push('/');
+  }
 
   const fetchData = () => {
     setIsLoading(true)
@@ -86,6 +100,7 @@ function Kitchen() {
 
   return (
     <div>
+    <button style ={{backgroundColor:'#FFF2CB', color: '#C1B841', border:'none', cursor: 'pointer', padding: '10px' }}onClick= {logOut} >Sign Out</button>
     <div>
         <h1 className="heading">Kitchen</h1>
         <div className="topbar">

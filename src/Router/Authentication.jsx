@@ -52,9 +52,11 @@ function Authentication(props) {
                 setIsCorrected(false);
             } else if (response.data.accessToken && values.department === 'Kitchen'){
                 setIsCorrected(true);
+                localStorage.setItem("token", response.data.accessToken)
                 props.history.push("/kitchen");
             } else if (response.data.accessToken && values.department === 'Housekeeping'){
                 setIsCorrected(true);
+                localStorage.setItem("token", response.data.accessToken)
                 props.history.push("/housekeeping");
             }
 

@@ -55,7 +55,7 @@ function createCard(amenityItem, fetchData) {
   );
 }
 
-function HouseKeeping() {
+function HouseKeeping(props) {
   const [amenityLists, setAmenityLists] = useState([]);
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false)
@@ -67,6 +67,13 @@ function HouseKeeping() {
       setIsLoading(false)
     });
   };
+
+  useEffect(()=>{
+    if(!localStorage.token){
+      props.history.push('/')
+
+    }
+  },[])
 
   useEffect(() => {
     fetchData();
@@ -84,8 +91,14 @@ function HouseKeeping() {
     setOrders(amenityLists.orders);
   }, [amenityLists]);
 
+  const logOut = () =>{
+    localStorage.clear(); 
+    props.history.push('/');
+  }
+
   return (
     <div>
+    <button style ={{backgroundColor:'#FFF2CB', color: '#C1B841', border:'none', cursor: 'pointer', padding: '10px' }}onClick= {logOut} >Sign Out</button>
       <div>
           <h1 className="heading">House Keeping</h1>
           <div className="topbar">

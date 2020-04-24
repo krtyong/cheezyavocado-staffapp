@@ -5,24 +5,9 @@ import api_axios from "../api.js";
 import delivering from "../delivering.gif";
 import loader from "../loader.gif";
 import loaderblue from "../loader-blue.gif";
+import client from "../mqtt.js"
 
-const mqtt = require("mqtt");
 
-var options = {
-  port: 37267,
-  host: "wss://soldier.cloudmqtt.com",
-  clientId: "mqttjs_" + Math.random().toString(16).substr(2, 8),
-  username: "vfmquhui",
-  password: "yXMUCDc8eoO8",
-  keepalive: 60,
-  reconnectPeriod: 1000,
-  protocolId: "MQIsdp",
-  protocolVersion: 3,
-  clean: true,
-  encoding: "utf8",
-};
-
-const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
 client.subscribe("lockerIsOpen");
 client.subscribe("lockerIsClosed");
 client.subscribe("orderStatus");

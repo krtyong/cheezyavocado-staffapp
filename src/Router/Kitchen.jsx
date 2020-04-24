@@ -2,24 +2,80 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import api_axios from "../api.js";
 import loader from "../loadingbig.gif";
+import client from '../mqtt.js'
 
-const mqtt = require("mqtt");
+const testData = [
+  {
+      "orderID": 199,
+      "roomNumber": 101,
+      "timestamp": "2020-04-24 17:41:38",
+      "orders": [
+          {
+              "foodName": "Prawn Pad Thai",
+              "amount": 2
+          }
+      ],
+      "status": "on the way to department"
+  },
+  {
+      "orderID": 198,
+      "roomNumber": 101,
+      "timestamp": "2020-04-24 17:35:26",
+      "orders": [
+          {
+              "foodName": "Prawn Pad Thai",
+              "amount": 2
+          }
+      ],
+      "status": "on the way to department"
+  },
+  {
+      "orderID": 196,
+      "roomNumber": 101,
+      "timestamp": "2020-04-24 16:47:44",
+      "orders": [
+          {
+              "foodName": "Prawn Pad Thai",
+              "amount": 2
+          }
+      ],
+      "status": "arrived"
+  },
+  {
+      "orderID": 193,
+      "roomNumber": 107,
+      "timestamp": "2020-04-24 16:23:44",
+      "orders": [
+          {
+              "foodName": "Prawn Pad Thai",
+              "amount": 1
+          },
+          {
+              "foodName": "Chicken Noodle",
+              "amount": 1
+          }
+      ],
+      "status": "approved"
+  }
+]
 
-var options = {
-  port: 37267,
-  host: "wss://soldier.cloudmqtt.com",
-  clientId: "mqttjs_" + Math.random().toString(16).substr(2, 8),
-  username: "vfmquhui",
-  password: "yXMUCDc8eoO8",
-  keepalive: 60,
-  reconnectPeriod: 1000,
-  protocolId: "MQIsdp",
-  protocolVersion: 3,
-  clean: true,
-  encoding: "utf8",
-};
+// const mqtt = require("mqtt");
 
-const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
+// var options = {
+//   port: 37267,
+//   host: "wss://soldier.cloudmqtt.com",
+//   clientId: "mqttjs_" + Math.random().toString(16).substr(2, 8),
+//   username: "vfmquhui",
+//   password: "yXMUCDc8eoO8",
+//   keepalive: 60,
+//   reconnectPeriod: 1000,
+//   protocolId: "MQIsdp",
+//   protocolVersion: 3,
+//   clean: true,
+//   encoding: "utf8",
+// };
+
+// const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
 client.subscribe("frontend/updateKitchenOrder");
 
 const CreateCardList = (props) => {
@@ -77,7 +133,8 @@ function Kitchen(props) {
   const fetchData = () => {
     setIsLoading(true)
     api_axios.get("/staff/getFoodOrders").then((response) => {
-      setFoodLists(response.data);
+      setFoodLists(testData);
+      console.log(response.data)
       setIsLoading(false)
     });
   };

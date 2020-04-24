@@ -2,24 +2,25 @@ import React, { useState, useEffect } from "react";
 import Card from "../components/Card.jsx";
 import api_axios from "../api.js";
 import loader from "../loadingbig.gif";
+import client from '../mqtt.js'
 
-const mqtt = require("mqtt");
+// const mqtt = require("mqtt");
 
-var options = {
-  port: 37267,
-  host: "wss://soldier.cloudmqtt.com",
-  clientId: "mqttjs_" + Math.random().toString(16).substr(2, 8),
-  username: "vfmquhui",
-  password: "yXMUCDc8eoO8",
-  keepalive: 60,
-  reconnectPeriod: 1000,
-  protocolId: "MQIsdp",
-  protocolVersion: 3,
-  clean: true,
-  encoding: "utf8",
-};
+// var options = {
+//   port: 37267,
+//   host: "wss://soldier.cloudmqtt.com",
+//   clientId: "mqttjs_" + Math.random().toString(16).substr(2, 8),
+//   username: "vfmquhui",
+//   password: "yXMUCDc8eoO8",
+//   keepalive: 60,
+//   reconnectPeriod: 1000,
+//   protocolId: "MQIsdp",
+//   protocolVersion: 3,
+//   clean: true,
+//   encoding: "utf8",
+// };
 
-const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
+// const client = mqtt.connect("wss://soldier.cloudmqtt.com", options);
 client.subscribe("frontend/updateAmenityOrder");
 
 const CreateCardList = (props) => {

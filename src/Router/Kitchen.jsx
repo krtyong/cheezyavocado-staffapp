@@ -100,7 +100,7 @@ function Kitchen(props) {
 
   return (
     <div>
-    <button style ={{backgroundColor:'#FFF2CB', color: '#C1B841', border:'none', cursor: 'pointer', padding: '10px' }}onClick= {logOut} >Sign Out</button>
+    <button style ={{backgroundColor:'#FFF2CB', color: '#C1B841', border:'none', cursor: 'pointer', padding: '10px'}}onClick= {logOut} >Sign Out</button>
     <div>
         <h1 className="heading">Kitchen</h1>
         <div className="topbar">

@@ -109,8 +109,7 @@
   }
 
   .delivering {
-    height: 70px;
-    width: 70px;
+    height: 125px;
   }
 
   .orderaccepted {
@@ -198,8 +197,8 @@
   }
 
   .arrived {
-    margin-top: 150px;
-    margin-left: 150px;
+    margin-top: 20px;
+    margin-right: 20px;
     color: #556B2F;
     font-family: Permanent Marker, sans-serif;
   }

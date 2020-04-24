@@ -5,114 +5,106 @@
     position: relative;
     padding: 25px 15px;
     background-color: #FFFFFF;
-    min-height: 300px;
-    max-width: 800px;
+    min-height: 200px;
+    min-width: 400px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: left;
-    display: flex;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    width: 80%;
+    display: flex;
   }
   
   .top {
     border-radius: 25px 25px 0 0;
-    height: 80px;
+    height: 25%;
     width: 100%;
     background-color: #556B2F;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
+    font-size: 2.5vw;
+    /* padding-top: 2.5%; */
   }
   
   .order-id {
-    font-size: 2em;
     color: #2d3436;
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 2.5%;
     color: #FFDB58;
     font-family: sans-serif;
-  }
-
-  orderid {
-    font-size: 2em;
-    color: #2d3436;
-    padding-top: 30px;
-    padding-left: 30px;
-    color: #FFDB58;
-    font-family: Alfa Slab One, sans-serif;
+    width: 40%;
+    position: relative;
+    margin-top: 5%;
   }
 
   .roomnumber {
-    font-size: 2em;
     color: #2d3436;
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-right: 2.5%;
     color: #FFDB58;
-  }
-
-  .callavocabot {
-    font-size: 1.00em;
-    /* padding: 25px 0px; */
-    border-radius: 0 25px 0 0;
-    /* margin-top: 5px; */
-    margin-right: 0px;
-    padding: 10px;
-    background-color: #C1B841;
-    text-align: center;
-    color: #556B2F;
-    width: 80px;
-    height: 60px;
-    border: none;
-    top: 0;
-    right: 0;
+    text-align: right;
+    width: 60%;
+    position: relative;
+    margin-top: 5%;
   }
 
   .bottom {
-    margin-top: 60px;
-    margin-left: 15px;
-    display: block;
-    height: 185px;
-    width: 400px;
+    margin-top: 10%;
+    width: 100%;
+    /* margin-left: 15px; */
+    /* display: flex; */
+    /* height: 185px; */
+    /* width: 1000px; */
+    /* width: 100%; */
   }
   
-  p {
+  /* p {
       color: #556B2F;
       display: block;
       font-size: 1.25em;
+  } */
+  .orderandbutton {
+    display: flex;
+    width: 100%;
+  }
+
+  .whatever{
+    width: 50%;
+    /* height: 50%; */
+    /* margin-top: 5%; */
+    display: flex;
+    /* margin-left: auto;
+    margin-right: auto; */
+    justify-content: center;
+    /* text-align: right; */
   }
 
   .order {
-    font-size: 1.5em;
+    width: 50%;
+  }
+
+  .orderlistwithavocado {
     color: red;
-    margin: 20px 0px;
+    font-size: 2.4vw;
+    display: flex;
+    margin-bottom: 7%;
   }
 
   .timestamp {
-    margin-top: 10px;
+    width: 50%;
+    margin-bottom: 5%;
   }
 
   .time {
-    margin: 0px 0px;
     color: #807667;
-    font-size: 1.5em;
+    font-size: 2.4vw;
   }
-
-  .button {
-    margin-bottom: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    width: 150px;
-  }
-
 
   .tag {
     color: #556B2F;
     font-weight: bolder;
+    margin-right: 10px;
   }
 
   .delivering {
@@ -122,12 +114,21 @@
     width: 35%;
   }
 
+  .orderaccepted {
+    color: #C94A4A;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 2.4vw;
+  }
+
   .accept {
-    margin-top: 200px;
-    margin-left: 125px;
-    font-size: 1.5em;
+    font-size: max(1em, 12px);
     background-color: #FFDB58;
-    padding: 10px;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    height: 70%;
+    /* padding-top: 30px; */
+    /* padding: px 5px; */
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;  
@@ -142,15 +143,15 @@
 }
 
   .call {
-    margin-top: 100px;
-    margin-left: 150px;
-    width: 125px;
-    height: 125px;
+    /* margin-top: 100px;
+    margin-left: 150px; */
+    width: 10vh;
+    height: 10vh;
     background-color: #C1B841;
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.25em;
+    font-size: max(0.75em, 10px);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-family: Permanent Marker, sans-serif;

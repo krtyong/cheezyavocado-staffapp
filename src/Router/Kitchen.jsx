@@ -86,12 +86,15 @@ function Kitchen() {
 
   return (
     <div>
-      <div className="topbar">
+    <div>
         <h1 className="heading">Kitchen</h1>
-        <h2 className="orderlists">Order Lists</h2>
-      </div>
+        <div className="topbar">
+          <h2 className="orderlists">Order Lists</h2>
+          <img className='fetching' src={loader} />
+          {/* {isLoading? <img className='fetching' src={loader} />:<p></p> } */}
+        </div>
+    </div>
       {/* {foodLists.map(createCard)} */}
-      {isLoading? <img className='fetching' src={loader} />:<p></p> }
       <CreateCardList foodLists={foodLists} fetchData={fetchData} />
     </div>
   );

@@ -73,8 +73,8 @@ function Authentication(props) {
     return (
         <div className="container">
             <h1>Cheezy Avocado</h1>
+            <img className='cheezyavocado' src={cheezyavocado} />
             <form onSubmit={handleSubmit}>
-            <img src={cheezyavocado} />
                 <label>Select Department: </label>
                     <div className="custom-select">
                         <select   

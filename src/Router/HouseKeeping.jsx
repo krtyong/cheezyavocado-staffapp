@@ -86,11 +86,11 @@ function HouseKeeping() {
 
   return (
     <div>
+      <h1 className="heading">House Keeping</h1>
       <div className="topbar">
-        <h1 className="heading">House Keeping</h1>
         <h2 className="orderlists">Order Lists</h2>
+        {isLoading ? <img className='fetching' src={loader} />:<p></p> }
       </div>
-      {isLoading ? <img className='fetching' src={loader} />:<p></p> }
       <CreateCardList amenityLists={amenityLists} fetchData={fetchData} />
     </div>
   );

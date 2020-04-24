@@ -2,26 +2,33 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-weight: 300;
   }
   
   body {
     font-family: sans-serif;
-    margin: 0 auto;
-    /* max-width: 500px; */
-    min-width: 500px;
     background-color: #FFF2CB;
+    font-weight: 300;
+    font-size: 18px;
+    /* margin-left: auto;
+    margin-right: auto; */
   }
   
   .container {
-    margin-top: 17%;
+    width: 90%;
+    height: 90%;
+    max-width: 500px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 5%;
     /* margin: 10% auto; */
     /* padding: 80px 0; */
     /* text-align: center; */
   }
   
   .container h1 {
-    font-size: 4em;
+    font-size: 2.5em;
     font-weight: 200;
     color: #556B2F;
     text-align: center;
@@ -35,17 +42,18 @@
   input {
     border: 1px solid rgba(193,184,65, 1);
     background-color: rgba(255, 219, 88, 0.2);
-    height: 60px;
-    width: 475px;
+    height: 50px;
+    width: 300px;
     border-radius: 3px;
     font-family: sans-serif;
-    padding: 10px 15px;
+    padding: 10px 10px;
     margin: 0 auto 10px auto;
     display: block;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
     color: #556B2F;
     font-weight: lighter;
+    text-align: left;
   }
 
   .buttonmargin {
@@ -71,32 +79,49 @@
   
   .heading {
     text-align: left;
-    font-size: 3em;
+    font-size: 2em;
     color: #556B2F;
     margin-top: 50px;
     margin-left: 50px;
     font-family: Permanent Marker, sans-serif;
     font-weight: lighter;
+    width: 200px;
+  }
+
+  .fetching {
+    height: 70px;
+    width: 70px;
   }
 
   .orderlists {
     text-align: left;
-    font-size: 1.75em;
+    font-size: 1.5em;
     color: #807667;
     margin-top: 20px;
     margin-left: 50px;
     font-family: sans-serif;
+    /* display: flex; */
+    width: 170px;
+    height: 50px;
+  }
+
+  .topbar {
+    display: flex;
+    height: 70px;
   }
 
   label {
     display: block;
     margin-top: 30px;
     margin-bottom: 5px;
-    margin-left: 250px;
+    /* margin-left: 250px; */
     color: #807667;
-    width: 400px;
-    font-size: 1.5em;
+    width: 300px;
+    font-size: 1em;
     font-family: sans-serif;
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .custom-select {
@@ -106,24 +131,25 @@
   }
 
   .custom-select select {
-    height: 60px;
-    width: 475px;
+    height: 50px;
+    width: 300px;
     padding-left: 10px;
     background-color: #C1B841;
-    font-size: 1.5em;
+    font-size: 1em;
     color: #556B2F;
     font-weight: lighter;
     border: none;
     font-family: sans-serif;
   }
 
-  img {
-
+  .cheezyavocado {
     position: relative;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 
   .error {
@@ -137,8 +163,7 @@
     margin-bottom: 5px;
   }
 
-  .fetching {
-    margin-top: 200px;
-  }
+
+
 
 

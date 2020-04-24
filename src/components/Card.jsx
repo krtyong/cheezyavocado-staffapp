@@ -36,6 +36,7 @@ function Card(props) {
   const [listenMQTT, setListenMQTT] = useState(false)
   const [listenMQTTGuest, setListenMQTTGuest] = useState(false);
   const [lockerIsOpenButton, setLockerIsOpenButton] =useState(true);
+  const [orderIsAccepted, setOrderIsAccepted] = useState(false);
 
   const Loading = () => {
     return <>{isLoading ? <img className='loader' src={loaderblue}/> : <></>}</>;
@@ -53,7 +54,7 @@ function Card(props) {
       .then((response) => {
         setIsLoading(false)
         if (response.data === "order approved") {
-          props.fetchData()
+          props.fetchData();
           //setCardStatus("approved");
           //props.fetchData()
         }else{
@@ -83,17 +84,17 @@ function Card(props) {
     client.on('message', (topic, message) => {
       if (topic === 'lockerIsOpen' && listenMQTT===true) {
               console.log(topic)
-              setIsLoading(false)
-              props.fetchData()
+              setIsLoading(false);
+              props.fetchData();
               //setCardStatus("arrived at department");
       }
       if (topic === 'lockerIsClosed' && listenMQTT===true) {
         console.log(topic)
         setIsLoading(false)
         // get
-        props.fetchData()
+        props.fetchData();
         //setCardStatus("on the way");
-        setListenMQTTGuest(true)
+        setListenMQTTGuest(true);
       }
       if (topic === 'orderStatus' && listenMQTTGuest===true) {
         let obj ={}
@@ -102,10 +103,9 @@ function Card(props) {
         }
         console.log(obj)
         if(obj.status=="arrived"){
-          props.fetchData()
+          props.fetchData();
           //setCardStatus("arrived")
-          setListenMQTTGuest(false)
-
+          setListenMQTTGuest(false);
         }
 
       }
@@ -120,8 +120,8 @@ function Card(props) {
       setIsLoading(false);
       if (response.data === 'OK') {
         setListenMQTT(true); //Avocabot's LED is on
-      setIsLoading(true)
-      setLockerIsOpenButton(false);
+        setIsLoading(true)
+        setLockerIsOpenButton(false);
       }
     })
   }
@@ -144,39 +144,43 @@ function Card(props) {
   const renderButton = (cardStatus, statusApi) => {
     switch (statusApi) {
       case "pending":
+        setOrderIsAccepted(false);
         return (
-          <button className="accept" onClick={handleAccept}>
+          <button className="accept" onClick={() => handleAccept}>
             Accept Order
           </button>
         );
       case "approved":
-
+        setOrderIsAccepted(true);  
         return (
-          <button className="call" onClick={handleCall}>
+          <button className="call" onClick={() => handleCall}>
             Call Avocabot
           </button>
         );
 
       case "on the way to department":
+        setOrderIsAccepted(true); 
         return ( 
           <img className='loader' src={loader}/>   
         );
       case "arrived at department":
+        setOrderIsAccepted(true); 
         if(lockerIsOpenButton ){
         return (
-          <button className="open" onClick={handleOpen}>
+          <button className="open" onClick={() => handleOpen}>
             Open Avocabot
           </button>
         );
         }else{
-          return (<button className="send" onClick={handleSend}>Send Avocabot</button>);
-
+          return (<button className="send" onClick={() => handleSend}>Send Avocabot</button>);
         }
         case "on the way":
+          setOrderIsAccepted(true); 
           return (
             <img className='delivering' src={delivering} />
           );
       case "arrived":
+        setOrderIsAccepted(true); 
         return (
           <p className='arrived'>Arrived!</p>
         );
@@ -231,16 +235,24 @@ function Card(props) {
       </div>
       <div className="bottom">
         <div className="timestamp">
-          <p className="time">
-            <span className="tag">Time:</span> {props.timestamp}
-          </p>
+            <p className="time">
+              <span className="tag">Time:</span> {props.timestamp}
+            </p>
         </div>
         {/* <p className="customername"><span className='tag'>Customer:</span> {props.customer_name}</p> */}
-        <p className="order">
-          <div className="tag">Order:</div> {props.orders}{" "}
-        </p>
+      <div className='orderandbutton'>
+        <div className="order">
+          <p className='orderlistwithavocado'>
+            <span className="tag">Order:</span> 
+            {props.orders}{" "}
+          </p>
+          {orderIsAccepted ? <p className='orderaccepted'>Order is accepted!</p> : <p></p>}
+        </div>
+        <div className='whatever'>
+          { !isLoading && renderButton(cardStatus, props.statusApi)}
+        </div>
+      </div>    
       </div>
-      { !isLoading && renderButton(cardStatus, props.statusApi)}
       <Loading/>
     </div>
   );

@@ -86,10 +86,13 @@ function HouseKeeping() {
 
   return (
     <div>
-      <h1 className="heading">House Keeping</h1>
-      <div className="topbar">
-        <h2 className="orderlists">Order Lists</h2>
-        {isLoading ? <img className='fetching' src={loader} />:<p></p> }
+      <div>
+          <h1 className="heading">House Keeping</h1>
+          <div className="topbar">
+            <h2 className="orderlists">Order Lists</h2>
+            {/* <img className='fetching' src={loader} /> */}
+            {isLoading? <img className='fetching' src={loader} />:<p></p> }
+          </div>
       </div>
       <CreateCardList amenityLists={amenityLists} fetchData={fetchData} />
     </div>

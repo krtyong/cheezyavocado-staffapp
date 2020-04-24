@@ -90,8 +90,8 @@ function Kitchen() {
         <h1 className="heading">Kitchen</h1>
         <div className="topbar">
           <h2 className="orderlists">Order Lists</h2>
-          <img className='fetching' src={loader} />
-          {/* {isLoading? <img className='fetching' src={loader} />:<p></p> } */}
+          {/* <img className='fetching' src={loader} /> */}
+          {isLoading? <img className='fetching' src={loader} />:<p></p> }
         </div>
     </div>
       {/* {foodLists.map(createCard)} */}

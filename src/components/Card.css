@@ -13,6 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    height: 40%;
     display: flex;
   }
   
@@ -25,7 +26,7 @@
     top: 0;
     left: 0;
     display: flex;
-    font-size: 2.5vw;
+    font-size: 2.25vw;
     /* padding-top: 2.5%; */
   }
   
@@ -36,7 +37,7 @@
     font-family: sans-serif;
     width: 40%;
     position: relative;
-    margin-top: 5%;
+    margin-top: 30px;
   }
 
   .roomnumber {
@@ -46,11 +47,11 @@
     text-align: right;
     width: 60%;
     position: relative;
-    margin-top: 5%;
+    margin-top: 30px;
   }
 
   .bottom {
-    margin-top: 10%;
+    margin-top: 60px;
     width: 100%;
     /* margin-left: 15px; */
     /* display: flex; */
@@ -71,7 +72,7 @@
 
   .whatever{
     width: 50%;
-    /* height: 50%; */
+    min-height: 125px;
     /* margin-top: 5%; */
     display: flex;
     /* margin-left: auto;
@@ -86,7 +87,7 @@
 
   .orderlistwithavocado {
     color: red;
-    font-size: 2.4vw;
+    font-size: 2.5vw;
     display: flex;
     margin-bottom: 7%;
   }
@@ -98,7 +99,7 @@
 
   .time {
     color: #807667;
-    font-size: 2.4vw;
+    font-size: 2.5vw;
   }
 
   .tag {
@@ -108,25 +109,24 @@
   }
 
   .delivering {
-    margin-top: 50px;
-    margin-left: 120px;
-    height: 35%;
-    width: 35%;
+    height: 70px;
+    width: 70px;
   }
 
   .orderaccepted {
     color: #C94A4A;
     font-weight: bold;
     margin-right: 10px;
-    font-size: 2.4vw;
+    font-size: 3vw;
   }
 
   .accept {
     font-size: max(1em, 12px);
     background-color: #FFDB58;
+    margin-top: 50px;
     padding-left: 1vh;
     padding-right: 1vh;
-    height: 70%;
+    height: 40px;
     /* padding-top: 30px; */
     /* padding: px 5px; */
     border: none;
@@ -134,7 +134,7 @@
     border-radius: 5px;  
     cursor: pointer; 
     color: #556B2F;
-    font-family: sans-serif;
+    font-family: Permanent Marker, sans-serif;
     font-weight: bold;
   }
 
@@ -145,8 +145,10 @@
   .call {
     /* margin-top: 100px;
     margin-left: 150px; */
-    width: 10vh;
-    height: 10vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    height: 100px;
+    width: 100px;
     background-color: #C1B841;
     color: #556B2F;
     border-radius: 100%;
@@ -158,25 +160,29 @@
   }
 
   .open {
-    margin-top: 100px;
-    margin-left: 150px;
-    width: 125px;
-    height: 125px;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    height: 100px;
+    width: 100px;
     background-color: #FFDB58;
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.25em;
+    font-size: 1em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-family: Permanent Marker, sans-serif;
   }
 
   .send {
-    margin-top: 100px;
+    /* margin-top: 100px;
     margin-left: 150px;
     width: 125px;
-    height: 125px;
+    height: 125px; */
+    padding-left: 1vh;
+    padding-right: 1vh;
+    height: 100px;
+    width: 100px;
     background-color: #FFDB58;
     color: #556B2F;
     border-radius: 100%;
@@ -188,10 +194,8 @@
   }
 
   .loader {
-    margin-top: 125px;
-    margin-left: 170px;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
   }
 
   .arrived {

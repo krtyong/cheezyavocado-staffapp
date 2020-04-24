@@ -133,7 +133,7 @@ function Kitchen(props) {
   const fetchData = () => {
     setIsLoading(true)
     api_axios.get("/staff/getFoodOrders").then((response) => {
-      setFoodLists(testData);
+      setFoodLists(response.data);
       console.log(response.data)
       setIsLoading(false)
     });

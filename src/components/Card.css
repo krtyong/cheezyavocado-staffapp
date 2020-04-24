@@ -12,7 +12,7 @@
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     height: 40%;
     display: flex;
   }
@@ -115,9 +115,8 @@
 
   .orderaccepted {
     color: #C94A4A;
-    font-weight: bold;
     margin-right: 10px;
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   .accept {
@@ -164,11 +163,11 @@
     padding-right: 1vh;
     height: 100px;
     width: 100px;
+    font-size: max(0.75em, 10px);
     background-color: #FFDB58;
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-family: Permanent Marker, sans-serif;
@@ -183,11 +182,11 @@
     padding-right: 1vh;
     height: 100px;
     width: 100px;
+    font-size: max(0.75em, 10px);
     background-color: #FFDB58;
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: 1.25em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-family: Permanent Marker, sans-serif;

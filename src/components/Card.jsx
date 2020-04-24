@@ -57,7 +57,6 @@ function Card(props) {
           props.fetchData();
           setOrderIsAccepted(true);
           //setCardStatus("approved");
-          //props.fetchData()
         } else {
           throw new Error(response.data);
         }

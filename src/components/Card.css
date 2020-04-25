@@ -3,30 +3,31 @@
 .card {
     border-radius: 25px;
     position: relative;
-    padding: 25px 15px;
+    /* padding: 25px 15px; */
     background-color: #FFFFFF;
-    min-height: 200px;
-    min-width: 400px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: left;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-    height: 40%;
+    height: 300px;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 500px;
+    max-width: 500px;
     display: flex;
   }
   
   .top {
     border-radius: 25px 25px 0 0;
-    height: 25%;
+    height: 70px;
     width: 100%;
     background-color: #556B2F;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
-    font-size: 2.25vw;
+    font-size: 1em;
     /* padding-top: 2.5%; */
   }
   
@@ -51,61 +52,36 @@
   }
 
   .bottom {
-    margin-top: 60px;
+    margin: 90px 15px;
     width: 100%;
-    /* margin-left: 15px; */
-    /* display: flex; */
-    /* height: 185px; */
-    /* width: 1000px; */
-    /* width: 100%; */
-  }
-  
-  /* p {
-      color: #556B2F;
-      display: block;
-      font-size: 1.25em;
-  } */
-  .orderandbutton {
     display: flex;
-    width: 100%;
   }
 
-  .whatever{
-    width: 50%;
-    min-height: 125px;
-    /* margin-top: 5%; */
-    display: flex;
-    /* margin-left: auto;
-    margin-right: auto; */
-    justify-content: center;
-    /* text-align: right; */
-  }
-
-  .order {
-    width: 50%;
+  .timestampandorder {
+    width: 60%;
+    font-size: 1em;
   }
 
   .orderlistwithavocado {
     color: red;
-    font-size: 2.5vw;
     display: flex;
-    margin-bottom: 7%;
-  }
-
-  .timestamp {
-    width: 50%;
-    margin-bottom: 5%;
+    margin-top: 20px;
   }
 
   .time {
     color: #807667;
-    font-size: 2.5vw;
   }
 
   .tag {
     color: #556B2F;
     font-weight: bolder;
     margin-right: 10px;
+  }
+
+  .flow {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .delivering {
@@ -119,17 +95,17 @@
   }
 
   .accept {
-    font-size: max(1em, 12px);
-    background-color: #FFDB58;
-    margin-top: 50px;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    height: 40px;
-    /* padding-top: 30px; */
-    /* padding: px 5px; */
+    font-size: 1em;
+    background: rgb(254,190,125);
+    background: linear-gradient(90deg, rgba(254,190,125,1) 0%, rgba(254,165,165,1) 35%, rgba(193,255,159,1) 100%);
+    /* background-color: #FFDB58; */
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;  
+    border-radius: 10px;  
     cursor: pointer; 
     color: #556B2F;
     font-family: Permanent Marker, sans-serif;
@@ -143,27 +119,26 @@
   .call {
     /* margin-top: 100px;
     margin-left: 150px; */
-    padding-left: 1vh;
-    padding-right: 1vh;
+
     height: 100px;
     width: 100px;
-    background-color: #C1B841;
+    background: rgb(193,184,65);
+    background: radial-gradient(circle, rgba(193,184,65,1) 0%, rgba(85,107,47,1) 100%);
     color: #556B2F;
     border-radius: 100%;
     border: none;
-    font-size: max(0.75em, 10px);
+    font-size: 0.9em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     font-family: Permanent Marker, sans-serif;
   }
 
   .open {
-    padding-left: 1vh;
-    padding-right: 1vh;
     height: 100px;
     width: 100px;
-    font-size: max(0.75em, 10px);
-    background-color: #FFDB58;
+    font-size: 0.9em;
+    background: rgb(248,255,132);
+    background: radial-gradient(circle, rgba(248,255,132,1) 0%, rgba(85,107,47,1) 100%);
     color: #556B2F;
     border-radius: 100%;
     border: none;
@@ -173,16 +148,11 @@
   }
 
   .send {
-    /* margin-top: 100px;
-    margin-left: 150px;
-    width: 125px;
-    height: 125px; */
-    padding-left: 1vh;
-    padding-right: 1vh;
     height: 100px;
     width: 100px;
-    font-size: max(0.75em, 10px);
-    background-color: #FFDB58;
+    font-size: 0.9em;
+    background: rgb(245,206,62);
+    background: radial-gradient(circle, rgba(245,206,62,1) 0%, rgba(255,253,175,1) 100%);
     color: #556B2F;
     border-radius: 100%;
     border: none;
@@ -201,4 +171,6 @@
     margin-right: 20px;
     color: #556B2F;
     font-family: Permanent Marker, sans-serif;
+    background-color: #f8ff84;
+    padding: 5px;
   }

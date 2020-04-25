@@ -185,24 +185,21 @@ function Card(props) {
         {/* <button className='callavocabot'>Call Avocabot</button>        */}
       </div>
       <div className="bottom">
-        <div className="timestamp">
+        <div className="timestampandorder">
           <p className="time">
             <span className="tag">Time:</span> {props.timestamp}
           </p>
+          <p className="orderlistwithavocado">
+            <span className="tag">Order:</span>
+            {props.orders}{" "}
+          </p>
         </div>
-        {/* <p className="customername"><span className='tag'>Customer:</span> {props.customer_name}</p> */}
-        <div className="orderandbutton">
-          <div className="order">
-            <p className="orderlistwithavocado">
-              <span className="tag">Order:</span>
-              {props.orders}{" "}
-            </p>
+        <div className='flow'>
             {orderIsAccepted ? (
               <p className="orderaccepted">Order is accepted!</p>
             ) : (
               <p></p>
             )}
-          </div>
           <div className="whatever">
             {!isLoading && renderButton(cardStatus, props.statusApi)}
           </div>

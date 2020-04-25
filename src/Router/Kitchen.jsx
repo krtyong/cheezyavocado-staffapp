@@ -15,7 +15,7 @@ const testData = [
               "amount": 2
           }
       ],
-      "status": "on the way to department"
+      "status": "arrived"
   },
   {
       "orderID": 198,
@@ -27,7 +27,7 @@ const testData = [
               "amount": 2
           }
       ],
-      "status": "on the way to department"
+      "status": "approved"
   },
   {
       "orderID": 196,
@@ -39,7 +39,7 @@ const testData = [
               "amount": 2
           }
       ],
-      "status": "arrived"
+      "status": "pending"
   },
   {
       "orderID": 193,
@@ -55,7 +55,7 @@ const testData = [
               "amount": 1
           }
       ],
-      "status": "approved"
+      "status": "arrived at department"
   }
 ]
 
@@ -114,12 +114,11 @@ function createCard(foodItem, fetchData) {
 function Kitchen(props) {
   const [foodLists, setFoodLists] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(()=>{
     if(!localStorage.token){
-      props.history.push('/')
-
+      props.history.push('/');
     }
   },[])
 
@@ -134,8 +133,7 @@ function Kitchen(props) {
     setIsLoading(true)
     api_axios.get("/staff/getFoodOrders").then((response) => {
       setFoodLists(response.data);
-      console.log(response.data)
-      setIsLoading(false)
+      setIsLoading(false);
     });
   };
 
@@ -157,7 +155,7 @@ function Kitchen(props) {
 
   return (
     <div>
-    <button style ={{backgroundColor:'#FFF2CB', color: '#C1B841', border:'none', cursor: 'pointer', padding: '10px'}}onClick= {logOut} >Sign Out</button>
+        <button className='logoutbutton' onClick= {logOut} >Sign Out</button>
     <div>
         <h1 className="heading">Kitchen</h1>
         <div className="topbar">

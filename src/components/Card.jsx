@@ -195,11 +195,6 @@ function Card(props) {
           </p>
         </div>
         <div className='flow'>
-            {orderIsAccepted ? (
-              <p className="orderaccepted">Order is accepted!</p>
-            ) : (
-              <p></p>
-            )}
           <div className="whatever">
             {!isLoading && renderButton(cardStatus, props.statusApi)}
           </div>
